@@ -40,7 +40,7 @@ def hist2args(hist):
     N = len(hist)
     hist_val = {'bin_{}'.format(i+1): hist[i] for i in range(N)}
     hist_err = {'error_bin_{}'.format(i+1): np.sqrt(np.abs(hist[i])) for i in range(N)}
-    return dict(hist_val.items() + hist_err.items())
+    return dict(list(hist_val.items()) + list(hist_err.items()))
 
 def vals2hist(minuit):
     N = minuit.narg
